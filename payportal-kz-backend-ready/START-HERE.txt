@@ -1,0 +1,21 @@
+PAYPORTAL KZ — ALL-IN-ONE PACKAGE
+================================
+This archive combines the full app (frontend + Node.js backend) and the separate static deployment bundle.
+
+1) STATIC WEBSITE PREVIEW / STATIC HOSTING
+   Open static-deploy/index.html locally, or upload the CONTENTS of static-deploy/ to a static host.
+   This shows the site design, but server APIs/payments do not work without the backend.
+
+2) FULL APP WITH NODE.JS BACKEND
+   Use the files in this archive's ROOT folder (package.json, server.js, public/, etc.).
+   Requires Node.js 20+ and: npm install
+   Copy .env.example to .env, set a 32+ character SESSION_SECRET, then run npm run check and npm start.
+   Open http://localhost:3000
+
+3) REAL PAYMENTS
+   Live payments require approved merchant access and valid provider credentials. Never put API secrets in browser files.
+   Payouts are disabled by default. Do not claim real-money transfers work until tested against provider credentials.
+
+Netlify caveat: this version fails closed on Netlify because its SQLite data is ephemeral; real payments and the admin journal stay disabled there until a persistent database adapter is added.
+
+For more detail, see README.md.

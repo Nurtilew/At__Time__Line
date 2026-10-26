@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="PayPortal KZ — Қазақстандағы онлайн төлемдерді қауіпсіз қабылдауға және тексеруге арналған төлем интеграциясы.">
+  <title>PayPortal KZ — Төлем инфрақұрылымы</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23c9ff70'/%3E%3Cpath d='M12 29V11h10c6 0 9 3 9 8s-3 8-9 8h-4' fill='none' stroke='%230b100e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css"><script defer src="app.js"></script>
+</head>
+<body>
+  <div class="page-glow glow-one"></div><div class="page-glow glow-two"></div>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="PayPortal KZ — басты бет"><span class="brand-symbol"><b>p</b><i>p</i></span><span class="brand-word">payportal<span>.kz</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Мәзірді ашу" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav"><a class="active" href="index.html">Басты бет</a><a href="services.html">Мүмкіндіктер</a><a href="developers.html">Әзірлеушілерге</a><a href="status.html">Төлем статусы</a><a class="nav-admin" href="admin.html">Әкімші панелі <span>↗</span></a></nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> PAYMENT INFRASTRUCTURE <span class="eyebrow-sep">/</span> KAZAKHSTAN</div>
+        <h1>Төлемдеріңізді<br><span class="text-gradient">бір жүйеге жинаңыз.</span></h1>
+        <p class="hero-lead">Онлайн төлем сұрауын құрыңыз, провайдердің қауіпсіз бетіне бағыттаңыз және нәтижесін сервер арқылы тексеріңіз. Әр қадам анық, басқарылатын және тексерілетін.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#checkout">Төлем сұрауын жасау <span>↗</span></a><a class="button button-ghost" href="developers.html">API құжаттамасы <span>→</span></a></div>
+        <div class="trust-row"><span><i class="check-icon">✓</i> Карта деректері сайтта сақталмайды</span><span><i class="check-icon">✓</i> Жалған төлем расталмайды</span></div>
+      </div>
+      <div class="hero-art reveal" aria-label="Төлем ағынының көрнекі схемасы">
+        <div class="art-topline"><span class="art-label"><span class="live-dot"></span> PAYMENT ROUTE</span><span class="art-version">PP / 01</span></div>
+        <div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="art-grid"></div>
+        <div class="art-node node-customer"><span class="node-icon">↗</span><span class="node-title">Клиент</span><small>Secure checkout</small></div>
+        <div class="art-node node-server"><span class="node-icon node-icon-green">⌘</span><span class="node-title">PayPortal</span><small>API / Server</small></div>
+        <div class="art-node node-bank"><span class="node-icon">▤</span><span class="node-title">Провайдер</span><small>Hosted payment</small></div>
+        <svg class="art-connectors" viewBox="0 0 500 380" aria-hidden="true"><path d="M110 138 C140 138 150 184 184 184"/><path d="M278 184 C317 184 320 132 355 132"/><path d="M355 160 C315 160 320 230 278 230" stroke-dasharray="4 6"/><circle cx="184" cy="184" r="4"/><circle cx="355" cy="132" r="4"/></svg>
+        <div class="art-bottom"><span>SERVER-TO-SERVER</span><span class="art-bottom-mark">● <b>Үдеріс бақыланады</b></span></div>
+        <div class="art-sticker"><span class="sticker-icon">✓</span><span><b>Callback verification</b><small>Қолтаңбасы тексеріледі</small></span></div>
+      </div>
+    </section>
+
+    <section class="signal-strip wrap reveal"><div class="signal-intro"><span class="signal-small">ЖОБАНЫҢ ҚАҒИДАТТАРЫ</span><b>Әдемі интерфейс қана емес —<br>дұрыс төлем ағыны.</b></div><div class="signal-item"><span class="signal-num">01</span><div><b>Hosted checkout</b><small>Клиент провайдер бетінде төлейді</small></div></div><div class="signal-item"><span class="signal-num">02</span><div><b>Verified callback</b><small>Статус серверде тексеріледі</small></div></div><div class="signal-item"><span class="signal-num">03</span><div><b>Admin control</b><small>Тапсырыстар жеке панельде</small></div></div></section>
+
+    <section class="section wrap" id="checkout">
+      <div class="section-heading reveal"><div><div class="section-label">01 — CHECKOUT</div><h2>Төлем сұрауын <span class="text-gradient">құрыңыз.</span></h2></div><p>Сома мен қызмет атауын енгізіңіз. Сервер нақты провайдер баптаулары бар кезде ғана төлем сілтемесін сұратады.</p></div>
+      <div class="checkout-layout">
+        <article class="checkout-card reveal">
+          <div class="card-heading"><div class="card-brand-mini"><span class="brand-symbol small"><b>p</b><i>p</i></span><div><b>Merchant checkout</b><small>PayPortal KZ / KZT</small></div></div><span class="secure-badge"><span>⌑</span> Қауіпсіз</span></div>
+          <form id="paymentForm" class="payment-form">
+            <label for="amount">Төлем сомасы <span>ТЕҢГЕ / KZT</span></label>
+            <div class="amount-field"><input id="amount" name="amount" type="number" min="100" max="2000000" step="1" value="1500" required aria-describedby="amountHelp"><strong>₸</strong></div><small class="field-hint" id="amountHelp">100 ₸ – 2 000 000 ₸ аралығы</small>
+            <label for="description">Қызмет немесе тапсырыс атауы</label><input class="text-field" id="description" name="description" type="text" minlength="3" maxlength="120" value="Веб-қызмет төлемі" placeholder="Мысалы: сайт жасау қызметі" required>
+            <button class="button button-primary button-wide" type="submit" id="payButton"><span>Қауіпсіз төлемге өту</span><b>↗</b></button>
+            <div id="paymentMessage" class="message" role="status" aria-live="polite" hidden></div>
+            <p class="form-legal"><span class="lock-small">▣</span> Карта нөмірі мен CVV бұл сайтқа енгізілмейді.</p>
+          </form>
+        </article>
+        <aside class="checkout-aside reveal">
+          <div class="api-status-card"><div class="api-status-head"><span class="section-label">GATEWAY STATUS</span><span id="modePill" class="status-pill"><i></i><b id="modeText">Сервер күйін тексеру…</b></span></div><h3 id="apiStatusTitle">Төлем жүйесін тексеру</h3><p id="apiStatusDescription">Төлем қабылдау жүйесінің күйі серверден алынады.</p><div class="status-divider"></div><div class="status-detail"><span>Провайдер</span><b>Freedom Pay</b></div><div class="status-detail"><span>Валюта</span><b>KZT · ₸</b></div><div class="status-detail"><span>Растау тәсілі</span><b>Сервер callback-і</b></div></div>
+          <div class="aside-note"><span class="note-icon">i</span><p><b>Нақты ақша үшін:</b> белсенді мерчант аккаунты, дұрыс API кілттері және жария HTTPS домені қажет. Бұл деректер жоқ болса, жүйе төлем жасалғандай көрсетпейді.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="wrap"><div class="section-heading reveal"><div><div class="section-label">02 — CAPABILITIES</div><h2>Бақылау. Қауіпсіздік.<br><span class="text-gradient">Ашық процесс.</span></h2></div><p>Әр функция нақты серверлік жағдайға сүйенеді. Жоба ойдан жасалған әмиян балансын немесе расталмаған аударымды көрсетпейді.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-top"><span class="feature-icon icon-lime">↗</span><span class="feature-index">FEATURE / 01</span></div><h3>Онлайн төлем қабылдау</h3><p>Сұрау серверде құрылады, клиент провайдердің қауіпсіз төлем бетіне өтеді.</p><a href="services.html#payments" class="text-link">Қалай жұмыс істейді <span>→</span></a><div class="feature-decoration deco-arrow">↗</div></article>
+          <article class="feature-card reveal"><div class="feature-top"><span class="feature-icon icon-blue">⌁</span><span class="feature-index">FEATURE / 02</span></div><h3>Төлем статусын тексеру</h3><p>Браузерден қайту өздігінен төлем дәлелі емес. Сервер провайдердің нәтижесін күтеді.</p><a href="status.html" class="text-link">Тапсырысты тексеру <span>→</span></a><div class="feature-decoration deco-rings">◎</div></article>
+          <article class="feature-card reveal"><div class="feature-top"><span class="feature-icon icon-purple">⌘</span><span class="feature-index">FEATURE / 03</span></div><h3>Әкімші панелі</h3><p>Қорғалған кіру, тапсырыстар журналы және провайдерден келген транзакция статустары.</p><a href="admin.html" class="text-link">Панельді ашу <span>→</span></a><div class="feature-decoration deco-bars"><i></i><i></i><i></i><i></i></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap flow-section">
+      <div class="section-heading reveal"><div><div class="section-label">03 — THE FLOW</div><h2>Төлемнің жолы<br><span class="text-gradient">анық болуы керек.</span></h2></div><p>Бір де бір қадам тек әдемі батырмаға сүйенбейді. Статустың ақиқатын провайдердің тексерілген жауабы анықтайды.</p></div>
+      <div class="timeline reveal"><div class="timeline-progress"></div><article class="timeline-step"><span class="timeline-dot">01</span><div class="timeline-content"><small>CREATE</small><h3>Сұрау құрылады</h3><p>Сервер соманы тексеріп, тапсырысты журналға жазады және провайдерге қолтаңбасы бар сұрау жібереді.</p></div></article><article class="timeline-step"><span class="timeline-dot">02</span><div class="timeline-content"><small>CHECKOUT</small><h3>Клиент төлем жасайды</h3><p>Клиент төлемді провайдердің hosted checkout бетінде аяқтайды. Сайт карта деректерін көрмейді.</p></div></article><article class="timeline-step"><span class="timeline-dot">03</span><div class="timeline-content"><small>VERIFY</small><h3>Нәтиже тексеріледі</h3><p>Сервер callback қолтаңбасын, тапсырыс ID-сын және соманы тексергеннен кейін ғана мәртебені жаңартады.</p></div></article></div>
+    </section>
+
+    <section class="faq-section"><div class="wrap faq-layout"><div class="faq-intro reveal"><div class="section-label">04 — FAQ</div><h2>Жиі қойылатын<br><span class="text-gradient">сұрақтар.</span></h2><p>Нақты төлем мен сайт интерфейсін шатастырмау маңызды.</p><a href="developers.html" class="button button-ghost">Интеграция нұсқаулығы <span>→</span></a></div><div class="faq-list reveal"><details open><summary>Бұл сайт нақты ақша қабылдай ма?<span>＋</span></summary><p>Тек серверде Freedom Pay мерчант деректері дұрыс орнатылып, провайдер оларды қабылдаса. Кілттерсіз сайт төлем сұрауын жасамайды.</p></details><details><summary>Төлемді Kaspi Gold картасына бірден жібере ме?<span>＋</span></summary><p>Жоқ, төлем қабылдау автоматты түрде жеке Kaspi Gold картасына аудару деген сөз емес. Қабылданған ақша мерчант келісіміндегі есепшотқа түседі. Картаға payout бөлек рұқсат пен конфигурацияны талап етеді.</p></details><details><summary>Статус неге бірден жаңармауы мүмкін?<span>＋</span></summary><p>Провайдердің серверлік хабарламасы кешігуі мүмкін. Браузердің сәтті бетке қайта оралуы төлемді өздігінен растамайды.</p></details><details><summary>ZIP-ті жай статикалық хостингке салсам ше?<span>＋</span></summary><p>Дизайн мен беттер көрсетіледі, бірақ төлем API-і үшін Node.js сервері мен дерекқорды да іске қосу қажет. Тек HTML хостинг нақты төлемдерді өңдей алмайды.</p></details></div></div></section>
+
+    <section class="closing-cta wrap reveal"><div class="cta-orb"></div><div><span class="section-label">NEXT STEP / API</span><h2>Сайтыңызды сервермен<br><span class="text-gradient">байланыстырыңыз.</span></h2><p>Жоба құрылымын, орта айнымалыларын және API маршруттарын әзірлеушілерге арналған беттен қараңыз.</p></div><a class="button button-primary" href="developers.html">Нұсқаулықты ашу <span>↗</span></a></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-main"><a class="brand" href="index.html"><span class="brand-symbol"><b>p</b><i>p</i></span><span class="brand-word">payportal<span>.kz</span></span></a><p>Қазақстандағы онлайн төлемдерге арналған интеграция интерфейсі.</p><div class="footer-nav"><a href="services.html">Мүмкіндіктер</a><a href="developers.html">Әзірлеушілерге</a><a href="status.html">Төлем статусы</a><a href="admin.html">Әкімші</a></div></div><div class="wrap footer-bottom"><span>© <span id="year">2026</span> PayPortal KZ · Integration starter</span><div><a href="terms.html">Пайдалану шарттары</a><a href="privacy.html">Құпиялық</a></div><span class="footer-disclaimer">Банк немесе төлем провайдері емес.</span></div></footer>
+</body></html>

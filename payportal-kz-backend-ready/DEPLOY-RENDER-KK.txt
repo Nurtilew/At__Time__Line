@@ -1,0 +1,23 @@
+PAYPORTAL KZ — BACKEND-ПЕН БІРГЕ ЖАРИЯЛАУ
+========================================
+
+НЕЛІКТЕН ҚАЗІРГІ GITHUB PAGES СІЛТЕМЕСІНДЕ BACKEND ЖОҚ?
+GitHub Pages HTML/CSS/JavaScript қана береді; Node.js серверін іске қоспайды. Сондықтан API сол URL-де жұмыс істемейді. Бұл архивте backend және дизайн бір серверде жұмыс істейтіндей дайындалған.
+
+ЖАРИЯЛАУ
+1. Осы ZIP-ті шығарып, ішіндегі ФАЙЛДАРДЫ жаңа GitHub repository-ге жүкте (render.yaml міндетті түрде repository түбірінде болсын).
+2. Render.com аккаунтына кіріп, New + -> Blueprint таңда да, осы repository-ді қос.
+3. Render render.yaml ішінен payportal-kz сервисін құрады. SQLite үшін тұрақты диск бапталған; бұл Render-дің ақылы Starter қызметін талап етеді. Тегін/эфемерлік хостингте төлем журналына кепілдік берілмейді.
+4. Деплой аяқталғанда Render берген https://...onrender.com URL-ін аш. Дизайн мен API бір доменде болғандықтан, GitHub Pages-тегі cross-origin cookie/API мәселесі болмайды.
+5. Әкімші панелін аш. Бірінші баптауда бір реттік код сұралса, Render Dashboard -> payportal-kz -> Environment ішіндегі ADMIN_SETUP_TOKEN мәнін көшіріп, формаға енгіз. Сосын өз логинің мен кемінде 12 таңбалы құпиясөзіңді жаса.
+6. /api/health ашып, ok:true екенін тексер. Бұл сервердің қосылғанын ғана білдіреді; Freedom Pay live төлемдері қосылғанын білдірмейді.
+
+FREEDOM PAY
+- Әдепкісі FREEDOMPAY_MODE=test; ENABLE_PAYOUTS=false.
+- Нақты төлем үшін провайдер берген FREEDOMPAY_MERCHANT_ID және FREEDOMPAY_PAYMENT_SECRET мәндерін Render Environment ішіне ғана енгіз.
+- Сервис URL-і автоматты түрде RENDER_EXTERNAL_URL арқылы алынады. Freedom Pay кабинетінде result callback URL: https://СЕНІҢ-RENDER-ДОМЕНІҢ/api/freedompay/result.php
+- Алдымен провайдердің test/sandbox режимінде толық callback циклін тексер. Провайдердің тіркелгі деректерінсіз нақты ақша қабылдау мүмкін емес.
+- Payout/картаға ақша жіберу әдепкіде өшірулі қалады; ресми рұқсатсыз қоспа.
+
+МАҢЫЗДЫ
+Бұл архив сайтты және серверді бірге жариялауға дайындалады, бірақ мен сенің GitHub/Render аккаунтыңа кіріп, деплой жасай алмаймын. Сондықтан жаңа Render URL пайда болмайынша, бұрынғы GitHub Pages URL-і автоматты түрде backend-ке айналмайды.

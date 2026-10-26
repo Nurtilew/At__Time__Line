@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: payportal-kz
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: payportal-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/payportal.sqlite
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_SETUP_TOKEN
+        generateValue: true
+      - key: FREEDOMPAY_MODE
+        value: test
+      - key: ENABLE_PAYOUTS
+        value: "false"

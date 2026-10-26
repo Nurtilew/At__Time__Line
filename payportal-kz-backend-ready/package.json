@@ -1,0 +1,28 @@
+{
+  "name": "payportal-kz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Merchant payment portal with verified Freedom Pay callbacks and guarded card payouts",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "hash-password": "node scripts/hash-password.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/admin.js && node --check public/status.js && node --check public/result.js && node --check public/copy.js && node --check scripts/hash-password.js && node --check netlify/functions/api.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "fast-xml-parser": "^4.5.3",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.0",
+    "serverless-http": "^3.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+PAYPORTAL KZ — NETLIFY API FIX / CURRENT LIMITATIONS
+===================================================
+
+Why HTTP 405 happened
+---------------------
+The original deployment published only static files, so POST /api/admin/login
+had no server function behind it. The function adapter and /api/* redirect are
+now included to address routing.
+
+Important: this does NOT make Netlify a production payment backend
+------------------------------------------------------------------
+This code currently stores orders in a SQLite file. Netlify Functions use an
+ephemeral filesystem, so this version intentionally disables payment creation,
+payouts, payment-status reads, and the admin data journal on Netlify with HTTP
+503. This is a fail-safe change: it avoids acting as though an order record is
+durable when the function may restart on another instance.
+
+Setting SESSION_SECRET and ADMIN_PASSWORD_HASH alone does NOT solve database
+persistence. This project does not yet include a persistent external database
+adapter. Do not turn on live payments or payouts on Netlify with this build.
+
+Supported path for a working backend
+------------------------------------
+Run the full Express app on a Node.js host with a durable disk/database. The
+server-side .env file must not be uploaded publicly. Use Node.js 20+, install
+dependencies with npm install, copy .env.example to .env, set a SESSION_SECRET
+with at least 32 characters, then run npm run check and npm start.
+
+Freedom Pay production requirements
+----------------------------------
+Use an approved merchant account and credentials. Test initialization, signed
+provider responses, result callback verification, duplicate callbacks, and final
+order state in the provider sandbox before considering live mode. This archive
+has not been end-to-end tested with a real merchant account.
+
+Password hash helper
+--------------------
+If using an environment-based admin password, run npm run hash-password on a
+trusted machine after installing dependencies and set the resulting hash as
+ADMIN_PASSWORD_HASH in the server environment. Never commit real secrets.
